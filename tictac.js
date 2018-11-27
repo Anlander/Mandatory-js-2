@@ -6,7 +6,7 @@ let cell = $(".cell")
 console.log(cell)
 $( window ).load(function(){
   console.log("ready")
-  document.turn = "X";
+  playTurn = "X";
   $("button").click(function(){
 
     cell.text("")
@@ -39,52 +39,66 @@ let tableDetail = $("td")
 
 
 
-function checkWin(){
-  let winner = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [0,3,6],
-  [1,4,7],
-  [2,5,8],
-  [0,4,8],
-  [6,4,2]
-],
-result = [ false, undefined] ;
-
-}
-
-let haveAWinner = checkWin();
-if( haveAWinner == "" ) {
- alert( haveAWinner + " won the game!" );
-}
-/*
-let thewinner = $(checkWin);
-if ($(thewinner).text("")) {
-  alert(thewinner + "won the game");
-}
+var win1 = $('#s1');
+var win2 = $('#s2');
+var win3 = $('#s3');
+var win4 = $('#s4');
+var win5 = $('#s5');
+var win6 = $('#s6');
+var win7 = $('#s7');
+var win8 = $('#s8');
+var win9 = $('#s9');
 
 
-/*
-function nextMove(square) {
-  console.log("nextmove", square)
-  if(square.innerText == ''){
-    console.log("turn", document.turn)
-    square.innerText = document.turn;
-    switchTurn();
+function checkWin() {
+  if ($(win1).text("X") && $(win2).text("X") && $(win3).text("X")) {
+    winner("X");
+  } else if ($(win1).text("O") && $(win2).text("O") && $(win3).text("O")) {
+    winner("O");
+  }
 
-}
-}
+  else if ($(win4).text("X") && $(win5).text("X") && $(win6).text("X")) {
 
-function switchTurn() {
-  console.log("switch")
-  if(document.turn == "X"){
-    console.log("IFX")
-    document.turn = "0";
-  } else {
-    console.log("ElseO")
-    document.turn = "X";
+  } else if ($(win4).text("O") && $(win5).text("O") && $(win6).text("O")) {
+
+  }
+
+  else if ($(win7).text("X") && $(win8).text("X") && $(win9).text("X")) {
+
+  } else if ($(win7).text("O") && $(win8).text("O") && $(win9).text("O")) {
+
+  }
+
+  else if ($(win5).text("X") && $(win2).text("X") && $(win8).text("X")) {
+
+  } else if ($(win5).text("O") && $(win2).text("O") && $(win8).text("O")) {
+
+  }
+
+  else if ($(win6).text("X") && $(win9).text("X") && $(win3).text("X")) {
+
+  } else if ($(win6).text("O") && $(win9).text("O") && $(win3).text("O")) {
+
+  }
+
+  else if ($(win1).text("X") && $(win5).text("X") && $(win9).text("X")) {
+
+  } else if ($(win1).text("O") && $(win5).text("O") && $(win9).text("O")) {
+
+  }
+
+  else if ($(win5).text("X") && $(win7).text("X") && $(win3).text("X")) {
+
+  } else if ($(win5).text("O") && $(win7).text("O") && $(win3).text("O")) {
+
   }
 }
 
-let checkWin = */
+
+
+
+function winner() {
+ if (checkWin==true){
+   alert("congrats you won")
+ }
+}
