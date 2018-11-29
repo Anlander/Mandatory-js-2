@@ -55,3 +55,22 @@ button {
   width: 70px;
 
 }
+
+
+.winning {
+  position: absolute;
+  left:43.5%;
+  top: 30%;
+}
+
+
+.info {
+  position: absolute;
+  left: 47%;
+  top: 5%;
+}
+
+
+body {
+  background-color: grey;
+}
